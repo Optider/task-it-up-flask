@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+
+
+{% block body %}
+
+<section class="task-list">
+    <h1>Task It!</h1>
+
+    {% if tasks|length < 1 %}
+        <p class="pl-2">No Tasks Scheduled! Let's create one!</p>
+    {% else %}
+
+    <ul class="list-group list-group-flush">
+        {% for task in tasks %}
+        <li class="list-group-item">
+            <div class="task-disp disp-date">{{task.date_created.date()}}</div>
+            <div class="task-disp disp-content">{{task.content}}</div>
+            
+            <a class="btn btn-outline-secondary float-right ml-2 mr-2" type="button" href="/update/{{task.id}}">Edit</a>
+            <a class="btn btn-outline-danger float-right ml-2 mr-2" type="button" href="/delete/{{task.id}}">Delete</a>
+        
+            
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
+
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" required>
+        <input type="submit" value="Add Task">
+    </form>
+</section>
+{% endblock %}
+
+

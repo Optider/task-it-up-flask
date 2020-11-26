@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    font-family: sans-serif;
+}
+
+.task-list {
+    /* margin-top: 80px; */
+    text-align: center;
+}
+
+.task-list h1 {
+    margin-bottom: 48px;
+}
+
+.task-disp {
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.disp-date {
+    width: 20%;
+}
+
+.disp-content {
+    width: 60%;
+    text-align: center;
+}
+
+section form {
+    margin: 40px 0;
+}
